@@ -18,7 +18,19 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.garden.views import index
+from apps.garden.views import about
+from apps.garden.views import team
+from apps.garden.views import booking
+from apps.garden.views import gallery
+from apps.garden.views import portfolio
+from apps.garden.views import contact
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
+    path('about/', about, name="about"),
+    path('team/', team, name="team"),
+    path('booking/', booking, name="booking"),
+    path('gallery/', gallery, name="gallery"),
+    path('portfolio/', portfolio, name="portfolio"),
+    path('contact/', contact, name="contact"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
